@@ -88,3 +88,9 @@ p.innerText = `${tg.initDataUnsafe.user.first_name}
 ${tg.initDataUnsafe.user.last_name}`;
 
 usercard.appendChild(p); // вставляем параграф с данными пользователя
+
+const profileEditPopup = document.querySelector('.popup');
+
+tg.MainButton.addEventListener('click', function () {
+  profileEditPopup.classList.add('popup_opened');
+});

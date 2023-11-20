@@ -38,7 +38,49 @@
         </div>
       </div>
     </div>
-    <!-- "чтобы вытаскивать информацию из тг в сайт"  -->
+    <section class="popup">
+      <div class="popup__container">
+        <h2 class="popup__header">Редактировать профиль</h2>
+        <form
+          id="formEditProfile"
+          name="form-edit-profile"
+          class="popup__form popup__form_edit-profile"
+          novalidate
+        >
+          <fieldset class="popup__fieldset">
+            <input
+              id="name-input"
+              class="popup__input popup__input_type_name"
+              name="name"
+              placeholder="Введите ваше имя"
+              required
+              minlength="2"
+              maxlength="40"
+              type="text"
+            />
+            <span class="name-input-error popup__text-error"></span>
+            <input
+              id="description-input"
+              class="popup__input popup__input_type_description"
+              name="about"
+              placeholder="Введите ваш регион"
+              required
+              minlength="2"
+              maxlength="40"
+              type="text"
+            />
+            <span class="description-input-error popup__text-error"></span>
+            <button
+              type="submit"
+              class="popup__submit popup__submitEditProfile"
+            >
+              Сохранить
+            </button>
+          </fieldset>
+        </form>
+        <button type="button" class="popup__close"></button>
+      </div>
+    </section>
 
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script src="app.js"></script>
