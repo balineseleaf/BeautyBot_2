@@ -14,6 +14,9 @@ let btn3 = document.getElementById('btn3');
 let btn4 = document.getElementById('btn4');
 let btn5 = document.getElementById('btn5');
 let btn6 = document.getElementById('btn6');
+const buttonMap = document.getElementById('btn-map');
+
+buttonMap.addEventListener('click', function () {});
 
 btn1.addEventListener('click', function () {
   if (tg.MainButton.isVisible) {
@@ -94,9 +97,17 @@ Telegram.WebApp.onEvent('mainButtonClicked', function () {
   tg.MainButton.textColor = '#000000';
 });
 
-Telegram.WebApp.onEvent('mainButtonClicked', function () {
+buttonMap.addEventListener('click', function () {
   profileEditPopup.classList.add('popup_opened');
 });
+
+// btn6.addEventListener('click', function () {
+//   profileEditPopup.classList.add('popup_opened');
+// });
+
+// Telegram.WebApp.onEvent('mainButtonClicked', function () {
+//   profileEditPopup.classList.add('popup_opened');
+// });
 
 p.innerText = `${tg.initDataUnsafe.user.first_name}
 ${tg.initDataUnsafe.user.last_name}`;
