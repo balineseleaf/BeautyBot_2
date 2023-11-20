@@ -76,9 +76,9 @@ btn6.addEventListener('click', function () {
 });
 
 // Функция, которая передаст данные на сайт
-Telegram.WebApp.onEvent('mainButtonClicked', function () {
-  tg.sendData(item); // отправляем данные
-});
+// Telegram.WebApp.onEvent('mainButtonClicked', function () {
+//   tg.sendData(item); // отправляем данные
+// });
 
 let usercard = document.getElementById('usercard');
 
@@ -91,6 +91,6 @@ usercard.appendChild(p); // вставляем параграф с данным�
 
 const profileEditPopup = document.querySelector('.popup');
 
-tg.MainButton.addEventListener('click', function () {
+Telegram.WebApp.onEvent('mainButtonClicked', function () {
   profileEditPopup.classList.add('popup_opened');
 });
