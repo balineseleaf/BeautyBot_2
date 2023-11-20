@@ -5,7 +5,6 @@ tg.expand(); // на весь экран сайт
 // создается тг, а не сайтом эта кнопка
 tg.MainButton.textColor = '#FFFFFF'; // изменим текст кнопки
 tg.MainButton.color = '#0a85d8';
-console.log('1');
 let item = '';
 
 let btn1 = document.getElementById('btn1');
@@ -14,9 +13,8 @@ let btn3 = document.getElementById('btn3');
 let btn4 = document.getElementById('btn4');
 let btn5 = document.getElementById('btn5');
 let btn6 = document.getElementById('btn6');
-const buttonMap = document.getElementById('btn-map');
-
-buttonMap.addEventListener('click', function () {});
+const buttonAvatar = document.getElementById('btn-avatar');
+console.log(buttonAvatar);
 
 btn1.addEventListener('click', function () {
   if (tg.MainButton.isVisible) {
@@ -89,16 +87,14 @@ let p = document.createElement('p');
 
 usercard.appendChild(p); // вставляем параграф с данными пользователя
 
-const profileEditPopup = document.querySelector('.popup');
-console.log('2', profileEditPopup);
-console.log('3');
+const profileUpdateAvatar = document.getElementById('popup');
 
 Telegram.WebApp.onEvent('mainButtonClicked', function () {
   tg.MainButton.textColor = '#000000';
 });
 
-buttonMap.addEventListener('click', function () {
-  profileEditPopup.classList.add('popup_opened');
+buttonAvatar.addEventListener('click', function () {
+  profileUpdateAvatar.classList.add('popup_opened');
 });
 
 // btn6.addEventListener('click', function () {

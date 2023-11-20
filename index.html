@@ -37,45 +37,28 @@
           <button class="btn" id="btn6">Choose</button>
         </div>
       </div>
-      <button class="btn_map" id="btn-map">Открыть карту</button>
+      <button class="btn_avatar" id="btn-avatar">Открыть аватарку</button>
     </div>
 
-    <section class="popup">
+    <section class="popup popup_type_edit-avatar" id="popup">
       <div class="popup__container">
-        <h2 class="popup__header">Редактировать профиль</h2>
+        <h2 class="popup__header">Обновить аватар</h2>
         <form
-          id="formEditProfile"
-          name="form-edit-profile"
-          class="popup__form popup__form_edit-profile"
+          id="formEditAvatar"
+          name="form-edit-avatar"
+          class="popup__form popup__form_edit-avatar"
           novalidate
         >
           <fieldset class="popup__fieldset">
             <input
-              id="name-input"
-              class="popup__input popup__input_type_name"
-              name="name"
-              placeholder="Введите ваше имя"
+              id="avatar-input"
+              class="popup__input popup__input_type_edit-avatar"
+              name="link"
+              placeholder="Ссылка на аватар"
               required
-              minlength="2"
-              maxlength="40"
-              type="text"
+              type="url"
             />
-            <span class="name-input-error popup__text-error"></span>
-            <input
-              id="description-input"
-              class="popup__input popup__input_type_description"
-              name="about"
-              placeholder="Введите ваш регион"
-              required
-              minlength="2"
-              maxlength="40"
-              type="text"
-            />
-            <span class="description-input-error popup__text-error"></span>
-            <button
-              type="submit"
-              class="popup__submit popup__submitEditProfile"
-            >
+            <button type="submit" class="popup__submit popup__submitAddCard">
               Сохранить
             </button>
           </fieldset>
