@@ -4,7 +4,7 @@ tg.expand(); // на весь экран сайт
 
 // создается тг, а не сайтом эта кнопка
 tg.MainButton.textColor = '#FFFFFF'; // изменим текст кнопки
-tg.MainButton.color = '#2cab37';
+tg.MainButton.color = '#0a85d8';
 
 let item = '';
 
