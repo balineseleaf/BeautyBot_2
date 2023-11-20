@@ -92,5 +92,5 @@ usercard.appendChild(p); // вставляем параграф с данным�
 const profileEditPopup = document.querySelector('.popup');
 
 Telegram.WebApp.onEvent('mainButtonClicked', function () {
-  profileEditPopup.classList.add('popup_opened');
+  tg.MainButton.textColor = '#000000';
 });
