@@ -95,6 +95,7 @@ Telegram.WebApp.onEvent('mainButtonClicked', function () {
 
 buttonAvatar.addEventListener('click', function () {
   profileUpdateAvatar.classList.add('popup_opened');
+  profileUpdateAvatar.classList.add('popup_opened');
 });
 
 // btn6.addEventListener('click', function () {
