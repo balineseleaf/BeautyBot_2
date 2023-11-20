@@ -44,10 +44,9 @@ body {
 	background: rgb(10, 133, 216);
     opacity: 0.7;
 }
-.btn:checked {
-
-}
 
 .usercard {
 	text-align: center;
+    font-size: 20px;
+    color: #7371e0;
 }
