@@ -5,7 +5,7 @@ tg.expand(); // на весь экран сайт
 // создается тг, а не сайтом эта кнопка
 tg.MainButton.textColor = '#FFFFFF'; // изменим текст кнопки
 tg.MainButton.color = '#0a85d8';
-
+console.log('1');
 let item = '';
 
 let btn1 = document.getElementById('btn1');
@@ -84,13 +84,21 @@ let usercard = document.getElementById('usercard');
 
 let p = document.createElement('p');
 
-p.innerText = `${tg.initDataUnsafe.user.first_name}
-${tg.initDataUnsafe.user.last_name}`;
-
 usercard.appendChild(p); // вставляем параграф с данными пользователя
 
 const profileEditPopup = document.querySelector('.popup');
+console.log('2', profileEditPopup);
+console.log('3');
 
 Telegram.WebApp.onEvent('mainButtonClicked', function () {
   tg.MainButton.textColor = '#000000';
 });
+
+Telegram.WebApp.onEvent('mainButtonClicked', function () {
+  profileEditPopup.classList.add('popup_opened');
+});
+
+p.innerText = `${tg.initDataUnsafe.user.first_name}
+${tg.initDataUnsafe.user.last_name}`;
+
+Telegram.WebApp.onEvent('mainButtonClicked', function () {});
