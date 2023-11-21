@@ -95,18 +95,13 @@ Telegram.WebApp.onEvent('mainButtonClicked', function () {
 
 buttonAvatar.addEventListener('click', function () {
   profileUpdateAvatar.classList.add('popup_opened');
-  profileUpdateAvatar.classList.add('popup_opened');
 });
 
-// btn6.addEventListener('click', function () {
-//   profileEditPopup.classList.add('popup_opened');
-// });
+p.innerText = `${tg.initDataUnsafe.user.first_name}
+${tg.initDataUnsafe.user.last_name}
+${telegramAppChatLabs.initDataUnsafe.user.id}`;
+usercard.appendChild(p); // вставляем параграф с данными пользователя
 
 // Telegram.WebApp.onEvent('mainButtonClicked', function () {
-//   profileEditPopup.classList.add('popup_opened');
+//   tg.sendData(); // отправляем данные
 // });
-
-p.innerText = `${tg.initDataUnsafe.user.first_name}
-${tg.initDataUnsafe.user.last_name}`;
-
-Telegram.WebApp.onEvent('mainButtonClicked', function () {});

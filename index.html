@@ -37,12 +37,12 @@
           <button class="btn" id="btn6">Choose</button>
         </div>
       </div>
-      <button class="btn_avatar" id="btn-avatar">Открыть аватарку</button>
+      <button class="btn_avatar" id="btn-avatar">Мои Данные</button>
     </div>
 
     <section class="popup popup_type_edit-avatar" id="popup">
       <div class="popup__container">
-        <h2 class="popup__header">Обновить аватар</h2>
+        <h2 class="popup__header">Мои Данные:</h2>
         <form
           id="formEditAvatar"
           name="form-edit-avatar"
@@ -51,12 +51,31 @@
         >
           <fieldset class="popup__fieldset">
             <input
-              id="avatar-input"
-              class="popup__input popup__input_type_edit-avatar"
+              id="name-input"
+              class="popup__input popup__input_type_edit-name"
               name="link"
-              placeholder="Ссылка на аватар"
+              placeholder="Введите ваше имя"
               required
               type="url"
+            />
+            <p>Выберите ваш пол:</p>
+            <div>
+              <input type="radio" id="gender1" name="male" value="male" />
+              <label for="gender1">М</label>
+              <input type="radio" id="gender2" name="female" value="female" />
+              <label for="gender2">Ж</label>
+            </div>
+            <div>
+            <p>Введите ваш номер телефона</p>
+            <input id="phoneNumber" type="tel" value="" name="phoneNumber" aria-label="Please enter your phone number" placeholder="+7(921)000-00-00">
+            <label for="#phone-input">Phone number</label>
+            <input
+                id="email-input"
+                class="auth__input"
+                type="email"
+                name="email"
+                required
+                placeholder="Email"
             />
             <button type="submit" class="popup__submit popup__submitAddCard">
               Сохранить
