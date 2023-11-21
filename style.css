@@ -67,6 +67,20 @@ body {
 
 }
 
+.radio_inputs {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.auth__input{
+    margin-top: 10px;
+}
+.phone_paragraph{
+    margin:0;
+    margin-top: 12px;
+}
+
 /* popup */
 
 .popup {
@@ -144,5 +158,5 @@ body {
 
   .popup__submit {
     margin-top: 43px;
-    margin-left: 55px;
+    margin-left: 46px;
   }
