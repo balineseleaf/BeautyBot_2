@@ -13,8 +13,8 @@ let btn3 = document.getElementById('btn3');
 let btn4 = document.getElementById('btn4');
 let btn5 = document.getElementById('btn5');
 let btn6 = document.getElementById('btn6');
-const buttonAvatar = document.getElementById('btn-avatar');
-console.log(buttonAvatar);
+const buttonProfile = document.getElementById('btn-avatar');
+const buttonClosePopup = document.getElementById('btn-close-popup');
 
 btn1.addEventListener('click', function () {
   if (tg.MainButton.isVisible) {
@@ -87,14 +87,18 @@ let p = document.createElement('p');
 
 usercard.appendChild(p); // вставляем параграф с данными пользователя
 
-const profileUpdateAvatar = document.getElementById('popup');
+const profileUpdateProfile = document.getElementById('popup');
 
 Telegram.WebApp.onEvent('mainButtonClicked', function () {
   tg.MainButton.textColor = '#000000';
 });
 
-buttonAvatar.addEventListener('click', function () {
-  profileUpdateAvatar.classList.add('popup_opened');
+buttonProfile.addEventListener('click', function () {
+  profileUpdateProfile.classList.add('popup_opened');
+});
+
+buttonClosePopup.addEventListener('click', function () {
+  profileUpdateProfile.classList.remove('popup_opened');
 });
 
 p.innerText = `${tg.initDataUnsafe.user.first_name}
