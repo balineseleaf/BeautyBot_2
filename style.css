@@ -70,7 +70,17 @@ body {
 .radio_inputs {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+}
+.radio_input {
+    margin:0;
+    padding:0;
+}
+.radio_input:last-of-type {
+    margin-left: 20px;
+}
+
+.radio_label {
+    margin-left: 5px;
 }
 
 .auth__input{
