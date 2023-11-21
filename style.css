@@ -76,7 +76,17 @@ body {
 .auth__input{
     margin-top: 10px;
 }
-.phone_paragraph{
+.phone_paragraph {
+    margin:0;
+    margin-top: 12px;
+    margin-bottom: 10px;
+}
+.name_paragraph {
+    margin:0;
+    margin-top: 12px;
+}
+
+.gender_paragraph {
     margin:0;
     margin-top: 12px;
 }
@@ -114,9 +124,9 @@ body {
 
   .popup__form {
     box-sizing: border-box;
-    padding: 43px 36px 37px 36px;
+    padding: 10px 36px 10px 36px;
     background: #FFFFFF;
-    border-radius: 10px;
+    border-radius: 10%;
     width: 230px;
   }
   
