@@ -4,89 +4,43 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-
     <title>Beauty procedures</title>
   </head>
 
   <body>
     <div class="container">
+      <h1 class="header">Добро пожаловать!</h1>
       <div class="usercard" id="usercard"></div>
-      <div class="inner">
-        <div class="item">
-          <img src="images/1s.jpeg" alt="Ноготочки" class="img" />
-          <button class="btn" id="btn1">Выбрать</button>
-        </div>
-        <div class="item">
-          <img src="images/1s.jpeg" alt="Ноготочки" class="img" />
-          <button class="btn" id="btn2">Выбрать</button>
-        </div>
-        <div class="item">
-          <img src="images/1s.jpeg" alt="Ноготочки" class="img" />
-          <button class="btn" id="btn3">Выбрать</button>
-        </div>
-        <div class="item">
-          <img src="images/1s.jpeg" alt="Ноготочки" class="img" />
-          <button class="btn" id="btn4">Выбрать</button>
-        </div>
-        <div class="item">
-          <img src="images/1s.jpeg" alt="Ноготочки" class="img" />
-          <button class="btn" id="btn5">Выбрать</button>
-        </div>
-        <div class="item">
-          <img src="images/1s.jpeg" alt="Ноготочки" class="img" />
-          <button class="btn" id="btn6">Выбрать</button>
-        </div>
-      </div>
-      <button class="btn_edit-profile" id="btn-edit-profile">Мои Данные</button>
-    </div>
 
-    
-    <section class="popup popup_type_edit-avatar" id="popup">
-      <div class="popup__container">
-        <h2 class="popup__header">Мои Данные:</h2>
-        <form
-          id="formEditProfile"
-          name="form-edit-profile"
-          class="popup__form popup__form_edit-profile"
-          novalidate
-        >
-          <fieldset class="popup__fieldset">
-            <p class="name_paragraph">Введите ваше имя:</p>
-            <input
-              id="name-input"
-              class="profile_name  popup__input popup__input_type_edit-name"
-              name="name"
-              required
-              type="url"
-            />
-            <p class="gender_paragraph">Выберите ваш пол:</p>
-            <div class="radio_inputs">
-              <input type="radio" class="profile_gender popup__input" id="m_gender" name="gender" value="М">
-              <label class="radio_label" for="m_gender">М</label><br>
-              <input type="radio" class="profile_gender popup__input" id="f_gender" name="gender" value="Ж">
-              <label class="radio_label" for="f_gender">Ж</label><br>
+      <div class="main__image-container">
+        <img class="img" src="images/Без названия.png" />
+      </div>
+
+      <div class="btns">
+        <div class="inner-long">
+          <a class="btn-link" id="btn1">Записаться</a>
+        </div>
+
+        <div class="inner">
+          <div class="inner-inside">
+            <div class="item">
+              <a class="btn-link" id="btn2">Мои Записи</a>
             </div>
-            <div>
-            <p class="phone_paragraph">Введите ваш номер телефона:</p>
-            <input class="profile_number popup__input" id="phoneNumber" type="tel" value="" name="phoneNumber" aria-label="Please enter your phone number" placeholder="+7(921)000-00-00">
-            <p class="email_paragraph">Введите вашу почту:</p>
-            <input
-                id="email-input"
-                class="profile_email popup__input"
-                type="email"
-                name="email"
-                required
-                placeholder="Email"
-            />
-            <button type="submit" class="popup__submit popup__submitAddCard">
-              Сохранить
-            </button>
-          </fieldset>
-        </form>
-        <button type="button" class="popup__close" id="btn-close-popup"></button>
+            <div class="item">
+              <a href="profile.html" class="btn-link" id="btn3">Мои Данные</a>
+            </div>
+          </div>
+          <div class="inner-inside">
+            <div class="item">
+              <a class="btn-link" id="btn4">Салоны</a>
+            </div>
+            <div class="item">
+              <a href="about.html" class="btn-link" id="btn5"> О Приложении </a>
+            </div>
+          </div>
+        </div>
       </div>
-    </section>
-
+    </div>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script type="module" src="index.js"></script>
   </body>

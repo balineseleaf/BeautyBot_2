@@ -1,0 +1,20 @@
+.container__about {
+    padding-top: 100px;
+	width: 390px;
+    margin: 20px auto 0;
+}
+
+.info {
+    padding: 15px;
+    border-radius: 10px;
+    border-width:1;
+    font-weight: 500;
+    border-color: #7371e0;
+    border-style: solid;
+    font-size: 20px;
+}
+
+.image__about {
+    margin-left: 20%;
+
+}

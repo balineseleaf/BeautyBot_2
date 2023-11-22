@@ -13,11 +13,6 @@ let item = '';
 
 let btn1 = document.getElementById('btn1');
 let btn2 = document.getElementById('btn2');
-const buttonEditProfile = document.getElementById('btn-edit-profile');
-const buttonClosePopup = document.getElementById('btn-close-popup');
-export const formEditProfile = document.querySelector(
-  '.popup__form_edit-profile'
-);
 
 btn1.addEventListener('click', function () {
   if (tg.MainButton.isVisible) {
@@ -44,41 +39,8 @@ btn2.addEventListener('click', function () {
 //   tg.sendData(item); // отправляем данные
 // });
 
-let usercard = document.getElementById('usercard');
-let p = document.createElement('p');
-usercard.appendChild(p); // вставляем параграф с данными пользователя
-
-const profileUpdateProfile = document.getElementById('popup');
-const profileName = document.querySelector('.profile_name');
-const profileGender = document.querySelector('.profile_gender');
-const profileNumber = document.querySelector('.profile_number');
-const profileEmail = document.querySelector('.profile_email');
-const userInfo = new UserInfo({
-  profileName,
-  profileGender,
-  profileNumber,
-  profileEmail,
-});
-
-const popupForEditProfile = new PopupWithForm(
-  profileUpdateProfile,
-  addProfileInfo
-);
-popupForEditProfile.setEventListeners();
-
 Telegram.WebApp.onEvent('mainButtonClicked', function () {
   tg.MainButton.textColor = '#000000';
-});
-
-buttonEditProfile.addEventListener('click', function () {
-  popupForEditProfile.openPopup();
-  const userData = userInfo.getUserInfo();
-  console.log('1', userData);
-  //profileUpdateProfile.setInputValues(userData); // и дальше нужно будет передать эти данные в форму
-});
-
-buttonClosePopup.addEventListener('click', function () {
-  popupForEditProfile.closePopup();
 });
 
 p.innerText = `${tg.initDataUnsafe.user.first_name}
@@ -87,18 +49,4 @@ usercard.appendChild(p); // вставляем параграф с данным�
 
 // Telegram.WebApp.onEvent('mainButtonClicked', function () {
 //   tg.sendData(); // отправляем данные
-// });
-
-//Функции добавления информации пользователя и добавления карточки в профиль
-function addProfileInfo() {}
-
-// собрать значения из чекбокса
-// const form = document.getElementById('formEditProfile');
-
-// form.addEventListener('submit', function (event) {
-//   var checkedValue = document.querySelector(
-//     'input[name="gender"]:checked'
-//   ).value;
-//   console.log(checkedValue);
-//   event.preventDefault();
 // });

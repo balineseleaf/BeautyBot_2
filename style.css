@@ -7,26 +7,67 @@ body {
 }
 
 .container {
+    padding-top:70px;
 	width: 390px;
-    margin: 20px auto 0;
+    margin: 20px auto;
+}
+.inner-long {
+    margin-bottom: 6px;
+}
+.btns {
+    margin-top: 100px;
+    display: flex;
+	flex-direction: column;
 }
 
 .inner {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	grid-template-rows: 200px 200px 200px;
+    display: flex;
+    flex-direction: row;
+}
+.inner-inside {
+    margin-bottom: 7px;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+
+.header {
+    text-align: center;
+    color: #7371e0;
 }
 
 .img {
 	width: 150px;
     border-radius: 10%;
+    margin-left: 30%;
 }
 
 .item {
 	text-align: center;
+    border-color: white;
+    border-style: solid;
+    border-width: 1px 1px;
+    margin-bottom: 5px;
+}
+
+.btn-link {
+    text-align: center;
+    width:100%;
+	display: inline-block;
+    cursor: pointer;
+	padding: 10px 0px;
+	border: none;
+	background: #7371e0;
+	border-radius: 10px;
+    text-decoration: none;
+	color: #fff;
+	font-weight: 700;
+	transition: 0.3s ease-out;
+    opacity: 1;
 }
 
 .btn {
+    width:100%;
 	display: inline-block;
     cursor: pointer;
 	padding: 10px 20px;
@@ -34,10 +75,13 @@ body {
 	background: #7371e0;
 	border-radius: 10px;
 	color: #fff;
-	text-transform: uppercase;
 	font-weight: 700;
 	transition: 0.3s ease-out;
     opacity: 1;
+}
+
+.btn:first-of-type {
+    margin-bottom: 40px;
 }
 
 .btn:hover {
@@ -66,157 +110,5 @@ body {
     color: #7371e0;
 }
 
-.radio_inputs {
-    display: flex;
-    flex-direction: row;
-    margin-top:5px;
-}
-.profile_gender {
-    margin:0;
-    padding:0;
-}
-.profile_gender:last-of-type {
-    margin-left: 20px;
-}
 
-.radio_label {
-    margin-left: 5px;
-}
-
-.auth__input{
-    margin-top: 15px;
-}
-.phone_paragraph {
-    margin:0;
-    margin-top: 12px;
-    margin-bottom: 10px;
-}
-.name_paragraph {
-    margin:0;
-    margin-top: 12px;
-}
-
-.gender_paragraph {
-    margin:0;
-    margin-top: 12px;
-}
-
-.email_paragraph{
-    margin:0;
-    margin-top: 17px;
-}
-
-/* popup */
-
-.popup {
-    position: fixed;
-    display: flex;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    align-items: center;
-    justify-content: center;
-    z-index: 100;
-    background-color: rgba(0,0,0,0.5);
-    visibility: hidden;
-    transition: visibility .4s, opacity .4s linear;
-    opacity: 0;
-}
-
-.popup_opened {
-    visibility: visible;
-    opacity: 1;
-  }
-
-.popup__container{
-    max-width: 287px;
-    position: relative;
-    background: #FFFFFF;
-    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
-    border-radius: 10px;
-  }
-
-  .popup__form {
-    box-sizing: border-box;
-    padding: 10px 36px 10px 36px;
-    background: #FFFFFF;
-    border-radius: 10%;
-    width: 230px;
-  }
-  
-  .profile_name {
-    margin: 0;
-    padding: 5px 9px 6px 5px;
-    width: 188px;
-    height: 14px;
-    border: none;
-    border-bottom: 1px solid rgba(0, 0, 0, .2);
-    font-family: 'Inter', Arial, sans-serif;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 1.2;
-    color: #000000;
-    transition: padding .3s ease;
-  }
-  
-
-  .popup__fieldset {
-    padding: 0;
-    margin: 0;
-    border: none;
-    text-align: left;
-    box-sizing: border-box;
-  }
-  
-  .popup__header {
-    margin: 0;
-    text-align: left;
-    font-weight: 900;
-    font-size: 24px;
-    line-height: 1.21;
-    color: #000000;
-    padding: 26px 64px 0 36px;
-    margin-top: 4px;
-  }
-
-  .popup__submit {
-    margin-top: 43px;
-    margin-left: 27px;
-    color: #fff;
-    cursor: pointer;
-	border: none;
-	background: #7371e0;
-	border-radius: 10px;
-	font-weight: 700;
-	transition: 0.3s ease-out;
-    padding: 10px 20px;
-    text-transform: uppercase;
-    opacity: 1;
-  }
-  
-  .popup__submit:hover {
-	background: rgb(10, 133, 216);
-    opacity: 0.7;
-  }
-
-  .popup__close {
-    position: absolute;
-    width: 25px;
-    height: 25px;
-    top: -25px;
-    right: -25px;
-    cursor: pointer;
-    background-image: url(images/closeicon.svg);
-    background-repeat: no-repeat;
-    background-color: transparent;
-    border: none;
-    background-position: center;
-    transition: opacity .3s ease;
-  }
-  
-  .popup__close:hover{
-    opacity: 0.6;
-  }
   
