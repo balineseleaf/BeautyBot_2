@@ -162,3 +162,24 @@
   .popup__close:hover{
     opacity: 0.6;
   }
+
+
+.back-arrow {
+  color: #7371e0;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.4s ease-out;
+  opacity: 1;
+}
+
+.back-arrow-container {
+  margin-left: 90px;
+  transform: translateY(20px);
+  cursor: pointer;
+  z-index: 200;
+  position: absolute;
+}
+
+.back-arrow:hover {
+  opacity: 0.7;
+}
