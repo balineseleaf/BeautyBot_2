@@ -1,3 +1,11 @@
+body {
+	margin: 0;
+	padding: 0;
+	font-size: 18px;
+	color: var(--tg-theme-text-color);
+	background: var(--tg-theme-bg-color);
+}
+
 .radio_inputs {
     display: flex;
     flex-direction: row;
@@ -27,6 +35,7 @@
 
 .radio_label {
     margin-left: 5px;
+    color: black;
 }
 
 .auth__input{
@@ -36,23 +45,27 @@
     margin:0;
     margin-top: 12px;
     margin-bottom: 10px;
+    color: black;
 }
 .name_paragraph {
     margin:0;
     margin-left: 30px;
     margin-top: 12px;
+    color: black;
 }
 
 .gender_paragraph {
     margin:0;
     margin-left: 30px;
     margin-top: 12px;
+    color: black;
 }
 
 .email_paragraph {
     margin:0;
     margin-top: 17px;
     margin-right: 70px;
+    color: black;
 }
 
 /* popup */
@@ -83,7 +96,6 @@
     position: relative;
     background: #FFFFFF;
     box-shadow: 10px 10px 80px rgba(115, 113, 224, 0.3);
-
     border-radius: 10px;
   }
 
@@ -159,12 +171,28 @@
     opacity: 0.7;
   }
 
+
+  .popup__close {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: -20px;
+    right: -20px;
+    cursor: pointer;
+    background-image: url(../images/closeicon.svg);
+    background-repeat: no-repeat;
+    background-color: transparent;
+    border: none;
+    background-position: center;
+    transition: opacity .3s ease;
+  }
+
   .popup__close:hover{
     opacity: 0.6;
   }
 
 
-.back-arrow {
+/* .back-arrow {
   color: #7371e0;
   text-decoration: none;
   cursor: pointer;
@@ -182,4 +210,4 @@
 
 .back-arrow:hover {
   opacity: 0.7;
-}
+} */
