@@ -41,8 +41,11 @@ body {
 }
 
 .header {
+    margin: 0;
     text-align: center;
     color: #7371e0;
+    padding-bottom: 40px;
+
 }
 
 .img {
