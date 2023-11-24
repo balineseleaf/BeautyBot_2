@@ -30,10 +30,51 @@ closeButton.addEventListener('click', function () {
   window.history.back();
 });
 
-// p.innerText = `${tg.initDataUnsafe.user.first_name}
-// ${tg.initDataUnsafe.user.last_name}`;
+// p.innerText = `${tg.initDataUnsafe?.user?.first_name}
+// ${tg.initDataUnsafe?.user?.last_name}`;
 // usercard.appendChild(p); // вставляем параграф с данными пользователя
 
 // Telegram.WebApp.onClick('mainButtonClicked', function () {
 //   tg.sendData(); // отправляем данные
+// });
+
+// tg.MainButton.setParams({
+//   text: "Отправить данные"
+// });
+
+// Получаем ссылки на поля и кнопку сабмита
+const nameInput = document.getElementById('name-input');
+const numberInput = document.getElementById('phoneNumber');
+const genderInput1 = document.getElementById('m_gender');
+const genderInput2 = document.getElementById('f_gender');
+const emailInput = document.getElementById('email-input');
+const submitButton = document.getElementById('submitButton');
+
+// Функция, проверяющая, заполнены ли все обязательные поля
+function checkForm() {
+  if (
+    numberInput.value !== '' &&
+    nameInput.value !== '' &&
+    emailInput.value !== '' &&
+    genderInput2.value !== '' &&
+    genderInput1.value !== ''
+  ) {
+    submitButton.disabled = false;
+    tg.MainButton.show(); // Если все поля заполнены, активируем кнопку сабмита
+  } else {
+    submitButton.disabled = true;
+    tg.MainButton.hide(); // Иначе оставляем кнопку неактивной
+  }
+}
+
+// Добавляем обработчики событий для каждого поля ввода
+nameInput.addEventListener('input', checkForm);
+emailInput.addEventListener('input', checkForm);
+genderInput1.addEventListener('change', checkForm);
+genderInput2.addEventListener('change', checkForm);
+numberInput.addEventListener('input', checkForm);
+
+// Отправляем данные
+// Telegram.WebApp.onClick('mainButtonClicked', function () {
+//   tg.sendData('Данные отправляем тут'); // отправляем данные
 // });
