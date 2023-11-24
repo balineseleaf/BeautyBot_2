@@ -6,7 +6,7 @@ let tg = window.Telegram.WebApp; // создаем объект телеграм
 tg.expand();
 
 // tg.MainButton.textColor = '#FFFFFF';
-// tg.MainButton.color = '#0a85d8';
+tg.MainButton.color = '#7371e0';
 
 // let currentPage = window.location.href;
 
