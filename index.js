@@ -7,6 +7,7 @@ tg.expand();
 
 // tg.MainButton.textColor = '#FFFFFF';
 tg.MainButton.color = '#7371e0';
+tg.MainButton.text = 'Сохранить';
 
 // let currentPage = window.location.href;
 
