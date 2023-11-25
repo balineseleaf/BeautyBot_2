@@ -1,0 +1,33 @@
+.form__inputs_error{
+    position: absolute;
+    /* top: em(83);
+    left: em(10); */
+    color: red;
+    visibility: hidden;
+}
+/* .form__inputs_error#check-error {
+    top: 10px;
+} */
+.error-visible {
+    visibility: visible;
+}
+
+.name__input-error {
+    margin-top: 65px;
+    margin-left: 30px;
+    font-size: 14px;
+}
+.phone__input-error {
+    margin-top: 67px;
+    margin-right: 43px;
+    font-size: 15px;
+}
+.email__input-error {
+    margin-top: 132px;
+    margin-right: 56px;
+    font-size: 15px;
+}
+.gender__input-error {
+    margin-top: 20px;
+    font-size: 14px;
+}

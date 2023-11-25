@@ -23,17 +23,12 @@ tg.BackButton.show();
 tg.onEvent('backButtonClicked', function () {
   window.history.back();
   tg.BackButton.hide();
-  // tg.close();
 });
 
 const closeButton = document.getElementById('close-btn');
 closeButton.addEventListener('click', function () {
   window.history.back();
 });
-
-// p.innerText = `${tg.initDataUnsafe?.user?.first_name}
-// ${tg.initDataUnsafe?.user?.last_name}`;
-// usercard.appendChild(p); // вставляем параграф с данными пользователя
 
 // Telegram.WebApp.onClick('mainButtonClicked', function () {
 //   tg.sendData(); // отправляем данные
@@ -51,6 +46,82 @@ const genderInput2 = document.getElementById('f_gender');
 const emailInput = document.getElementById('email-input');
 const submitButton = document.getElementById('submitButton');
 
+// Отправляем данные
+// Telegram.WebApp.onClick('mainButtonClicked', function () {
+//   tg.sendData('Данные отправляем тут'); // отправляем данные
+// });
+// Находим элементы ошибок
+const nameError = document.getElementById('name-input-error');
+const numberError = document.getElementById('phoneNumber-error');
+const emailError = document.getElementById('email-input-error');
+const radioInputError = document.getElementById('gender-error');
+
+submitButton.addEventListener('click', (e) => {
+  e.preventDefault();
+  validateForm();
+});
+
+// Валидация
+function validateForm() {
+  const fields = [nameError, emailError, numberError, radioInputError];
+  fields.forEach((field) => field.classList.remove('error-visible'));
+
+  const errors = [];
+
+  // проверяем поле имени
+  if (nameInput.value.trim() === '') {
+    errors.push(nameError);
+  }
+
+  // проверяем поле email
+  if (emailInput.value.trim() === '') {
+    errors.push(emailError);
+  } else if (!validateEmail(emailInput.value.trim())) {
+    errors.push(emailError);
+  }
+
+  // проверяем поле номера телефона
+  if (numberInput.value.trim() === '') {
+    errors.push(numberError);
+  } else if (!validatePhone(numberInput.value.trim())) {
+    errors.push(numberError);
+  }
+
+  // проверяем состояние чекбокса
+  const radioButtons = document.getElementsByName('gender');
+  let isChecked = false;
+  for (var i = 0; i < radioButtons.length; i++) {
+    if (radioButtons[i].checked) {
+      isChecked = true;
+      break;
+    }
+  }
+
+  if (isChecked === false) {
+    errors.push(radioInputError);
+  }
+
+  // if (!genderInput2.checked) {
+  //   errors.push(radioInputError2);
+  // }
+
+  errors.forEach((error) => error.classList.add('error-visible'));
+
+  console.log('1', isChecked);
+  return errors;
+}
+
+function validateEmail(email) {
+  const regex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}$/;
+  return regex.test(String(email).toLowerCase());
+}
+
+function validatePhone(phone) {
+  const regex =
+    /^\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}$/;
+  return regex.test(phone);
+}
+
 // Функция, проверяющая, заполнены ли все обязательные поля
 function checkForm() {
   if (
@@ -60,11 +131,16 @@ function checkForm() {
     genderInput2.value !== '' &&
     genderInput1.value !== ''
   ) {
+    // nameError.classList.contains('error-visible') &&
+    // emailError.classList.contains('error-visible') &&
+    // numberError.classList.contains('error-visible') &&
+    // radioInputError1.classList.contains('error-visible')&&
+    // radioInputError2.classList.contains('error-visible') &&
     submitButton.disabled = false;
-    tg.MainButton.show(); // Если все поля заполнены, активируем кнопку сабмита
+    tg.MainButton.show();
   } else {
     submitButton.disabled = true;
-    tg.MainButton.hide(); // Иначе оставляем кнопку неактивной
+    tg.MainButton.hide();
   }
 }
 
@@ -74,8 +150,3 @@ emailInput.addEventListener('input', checkForm);
 genderInput1.addEventListener('change', checkForm);
 genderInput2.addEventListener('change', checkForm);
 numberInput.addEventListener('input', checkForm);
-
-// Отправляем данные
-// Telegram.WebApp.onClick('mainButtonClicked', function () {
-//   tg.sendData('Данные отправляем тут'); // отправляем данные
-// });
