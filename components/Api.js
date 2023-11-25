@@ -1,31 +1,13 @@
-// export default class Api {
+// class Api {
 //   constructor(config) {
 //     this._url = config.url; // url
-//     this._headers = config.headers; // заголовок
-//     this._authorization = config.headers.authorization; // token
+//     // this._headers = config.headers; // заголовок
+//     // this._authorization = config.headers.authorization; // token
 //   }
 
 //   getUserData() {
-//     return fetch(`${this._url}/users/me`, {
+//     return fetch(``, {
 //       method: 'GET',
-//       headers: {
-//         authorization: this._authorization,
-//       },
-//     }).then(this._handleResponse);
-//   }
-
-//   setUpdateUserData(userData) {
-//     console.log('1', userData);
-//     return fetch(`${this._url}/users/me`, {
-//       method: 'PATCH',
-//       headers: {
-//         authorization: this._authorization,
-//         'Content-Type': 'application/json',
-//       },
-//       body: JSON.stringify({
-//         name: userData.name,
-//         about: userData.about,
-//       }),
 //     }).then(this._handleResponse);
 //   }
 
@@ -39,3 +21,13 @@
 //     }
 //   }
 // }
+
+// // const api = new Api({
+// //   url: '',
+// //   headers: {
+// //     authorization: '',
+// //     'Content-Type': 'application/json',
+// //   },
+// // });
+
+// export default api;
