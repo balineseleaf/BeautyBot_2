@@ -128,8 +128,7 @@ function checkForm() {
     numberInput.value !== '' &&
     nameInput.value !== '' &&
     emailInput.value !== '' &&
-    genderInput2.value !== '' &&
-    genderInput1.value !== ''
+    (genderInput1.checked || genderInput2.checked)
   ) {
     // nameError.classList.contains('error-visible') &&
     // emailError.classList.contains('error-visible') &&
