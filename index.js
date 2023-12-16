@@ -1,24 +1,43 @@
-// import PopupWithForm from './components/PopupWithForm.js';
-// import UserInfo from './components/UserInfo.js';
-// import Api from './components/Api.js';
+import Api from './utils/Api.js';
+
+const api = new Api({
+  url: 'http://localhost:5000',
+  headers: {
+    //authorization: '79aff481-506e-4c4c-8308-be7829df1002',
+    'Content-Type': 'application/json',
+  },
+});
+
+//получение инфо о пользователе
+function getInfoAboutUser() {
+  api
+    .getUserInfo()
+    .then((clientData) => {
+      console.log('идет с сервера', clientData);
+      testElement.textContent = clientData.clientName;
+    })
+    .catch((error) => console.log(error));
+}
+
+getInfoAboutUser();
+
+const testElement = document.getElementById('testfromserver');
+console.log(testElement);
 
 let tg = window.Telegram.WebApp; // создаем объект телеграмма
 tg.expand();
-
-// tg.MainButton.textColor = '#FFFFFF';
 tg.MainButton.color = '#7371e0';
 tg.MainButton.text = 'Сохранить';
-
 tg.BackButton.show();
 tg.onEvent('backButtonClicked', function () {
   window.history.back();
   tg.BackButton.hide();
 });
 
-const closeButton = document.getElementById('close-btn');
-closeButton.addEventListener('click', function () {
-  window.history.back();
-});
+// const closeButton = document.getElementById('close-btn');
+// closeButton.addEventListener('click', function () {
+//   window.history.back();
+// });
 
 // Telegram.WebApp.onClick('mainButtonClicked', function () {
 //   tg.sendData(); // отправляем данные
@@ -134,36 +153,10 @@ genderInput1.addEventListener('change', checkForm);
 genderInput2.addEventListener('change', checkForm);
 numberInput.addEventListener('input', checkForm);
 
-// function getData() {
-//   return fetch(`https://jsonplaceholder.typicode.com/posts/1`, {
-//     method: 'GET',
-//   })
-//     .then(handleResponse)
-//     .then((data) => {
-//       console.log('Данные:', data);
-//       return data;
-//     })
-//     .catch((error) => {
-//       console.error('Ошибка запроса:', error);
-//     });
-// }
-
-// function handleResponse(res) {
-//   if (res.ok) {
-//     return res.json(); // Метод json читает ответ от сервера в формате json
-//     // и возвращает промис.
-//     //Из этого промиса потом можно доставать нужные нам данные.
-//   } else {
-//     return Promise.reject(`Ошибка ${res.status}`);
-//   }
-// }
-
-// getData();
-
 // сбор данных с формы
 const form = document.getElementById('formEditProfile');
 
-// Получаем данные из формы
+//Получаем данные из формы
 function sendDataForm() {
   const formData = {
     name: document.getElementById('name-input').value,
@@ -172,34 +165,9 @@ function sendDataForm() {
     email: document.getElementById('email-input').value,
   };
   console.log(formData);
-
-  //Отправляем данные на бэкенд с помощью fetch
-  function sendUserInfo() {
-    return fetch('my_url', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(formData), // Преобразуем данные в формат JSON и отправляем
-    })
-      .then(function (res) {
-        if (res.ok) {
-          console.log('Данные успешно отправлены на сервер');
-          // Дополнительные действия при успешной отправке данных
-        } else {
-          console.log('Произошла ошибка при отправке данных');
-          // Дополнительные действия при ошибке отправки данных
-        }
-      })
-      .catch((error) => {
-        console.error('Ошибка в отправке данных:', error);
-      });
-  }
-
-  sendUserInfo();
 }
 
 submitButton.addEventListener('click', (evt) => {
-  evt.preventDefault(); // Предотвращаем стандартное поведение формы (перезагрузку страницы)
+  evt.preventDefault();
   sendDataForm();
 });
