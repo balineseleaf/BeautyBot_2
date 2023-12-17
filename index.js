@@ -1,6 +1,21 @@
 import Api from './utils/Api.js';
 import { langArr } from './utils/language.js';
 
+let tg = window.Telegram.WebApp; // создаем объект телеграмма
+tg.expand();
+tg.MainButton.color = '#7371e0';
+tg.MainButton.text = 'Сохранить';
+tg.BackButton.show();
+tg.onEvent('backButtonClicked', function () {
+  window.history.back();
+  tg.BackButton.hide();
+});
+
+const closeButton = document.getElementById('close-btn');
+closeButton.addEventListener('click', function () {
+  window.history.back();
+});
+
 const api = new Api({
   url: 'http://localhost:5000',
   headers: {
@@ -56,21 +71,6 @@ function changeLanguage() {
 changeLanguage();
 
 //-------------------------------------------------------------------------------------------------//
-
-let tg = window.Telegram.WebApp; // создаем объект телеграмма
-tg.expand();
-tg.MainButton.color = '#7371e0';
-tg.MainButton.text = 'Сохранить';
-tg.BackButton.show();
-tg.onEvent('backButtonClicked', function () {
-  window.history.back();
-  tg.BackButton.hide();
-});
-
-const closeButton = document.getElementById('close-btn');
-closeButton.addEventListener('click', function () {
-  window.history.back();
-});
 
 // Telegram.WebApp.onClick('mainButtonClicked', function () {
 //   tg.sendData(); // отправляем данные
