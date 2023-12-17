@@ -21,8 +21,37 @@ function getInfoAboutUser() {
 
 getInfoAboutUser();
 
-const testElement = document.getElementById('testfromserver');
-console.log(testElement);
+//-----------------------------------------------------------------------------------------------------//
+
+// Функция для обновления всех текстовых элементов на странице при смене языка
+function updateInterface(languageData, language) {
+  const elementsToUpdate = document.querySelectorAll('[data-language]');
+
+  elementsToUpdate.forEach((element) => {
+    const key = element.dataset.language;
+
+    if (languageData[language] && languageData[language][key]) {
+      element.textContent = languageData[language][key];
+    }
+  });
+}
+
+// Обработчик события клика по кнопке смены языка
+document
+  .getElementById('languageSelector')
+  .addEventListener('change', function () {
+    const selectedLanguage = this.value;
+    api
+      .switchLanguage()
+      .then((languageData) => {
+        updateInterface(languageData, selectedLanguage);
+      })
+      .catch((error) => {
+        console.error('Произошла ошибка:', error);
+      });
+  });
+
+//-------------------------------------------------------------------------------------------------//
 
 let tg = window.Telegram.WebApp; // создаем объект телеграмма
 tg.expand();

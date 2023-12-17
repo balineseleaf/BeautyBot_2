@@ -12,6 +12,16 @@ export default class Api {
     }).then(this._handleResponse);
   }
 
+  // Функция для получения данных с сервера о текстах на разных языках
+  switchLanguage() {
+    const selectedLanguage = document.getElementById('languageSelector').value;
+    return fetch(`${this._url}/language/${selectedLanguage}`, {
+      // понять какой язык
+      method: 'GET',
+      headers: this._headers,
+    }).then(this._handleResponse);
+  }
+
   _handleResponse(res) {
     if (res.ok) {
       return res.json();
