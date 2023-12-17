@@ -16,7 +16,6 @@ export default class Api {
   switchLanguage() {
     const selectedLanguage = document.getElementById('languageSelector').value;
     return fetch(`${this._url}/language/${selectedLanguage}`, {
-      // понять какой язык
       method: 'GET',
       headers: this._headers,
     }).then(this._handleResponse);
