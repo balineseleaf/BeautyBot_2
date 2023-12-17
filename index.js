@@ -11,10 +11,10 @@ tg.onEvent('backButtonClicked', function () {
   tg.BackButton.hide();
 });
 
-const closeButton = document.getElementById('close-btn');
-closeButton.addEventListener('click', function () {
-  window.history.back();
-});
+// const closeButton = document.getElementById('close-btn');
+// closeButton.addEventListener('click', function () {
+//   window.history.back();
+// });
 
 const api = new Api({
   url: 'http://localhost:5000',
