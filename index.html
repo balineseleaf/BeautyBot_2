@@ -9,15 +9,13 @@
 
   <body>
     <div class="container">
-      <h1 class="header">Добро пожаловать!</h1>
+      <h1 class="header lang-welcome-message"></h1>
       <!-- <div class="usercard" id="usercard"></div> -->
       <!-- Выпадающий список для выбора языка -->
       <div class="langbox">
         <select class="language-selector" id="languageSelector">
           <option value="en">English</option>
           <option value="ru">Русский</option>
-          <option value="es">Español</option>
-          <option value="fr">Francés</option>
         </select>
 
         <!-- Кнопка для смены языка -->
@@ -30,30 +28,52 @@
 
       <div class="btns">
         <div class="inner-long">
-          <a href="services.html" class="btn-link" id="btn1">Записаться</a>
+          <a
+            href="services.html"
+            class="btn-link lang-button-signup-for-service"
+            id="btn1"
+          ></a>
         </div>
 
         <div class="inner">
           <div class="inner-inside">
             <div class="item">
-              <a href="mynotes.html" class="btn-link" id="btn2">Мои Записи</a>
+              <a
+                href="mynotes.html"
+                class="btn-link lang-button-my-notes"
+                id="btn2"
+              ></a>
             </div>
             <div class="item">
-              <a href="profile.html" class="btn-link" id="btn3">Мои Данные</a>
+              <a
+                href="profile.html"
+                class="btn-link lang-button-my-data"
+                id="btn3"
+              ></a>
             </div>
           </div>
           <div class="inner-inside">
             <div class="item">
-              <a href="salons.html" class="btn-link" id="btn4">Салоны</a>
+              <a
+                href="salons.html"
+                class="btn-link lang-button-salons"
+                id="btn4"
+              ></a>
             </div>
             <div class="item">
-              <a href="about.html" class="btn-link" id="btn5"> О Приложении </a>
+              <a
+                href="about.html"
+                class="btn-link lang-button-about-us"
+                id="btn5"
+              >
+              </a>
             </div>
           </div>
         </div>
       </div>
     </div>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script type="module" src="./utils/language.js"></script>
     <script type="module" src="index.js"></script>
   </body>
 </html>

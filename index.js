@@ -1,4 +1,5 @@
 import Api from './utils/Api.js';
+import { langArr } from './utils/language.js';
 
 const api = new Api({
   url: 'http://localhost:5000',
@@ -10,6 +11,7 @@ const api = new Api({
 
 //получение инфо о пользователе
 function getInfoAboutUser() {
+  const testElement = document.getElementById('testfromserver');
   api
     .getUserInfo()
     .then((clientData) => {
@@ -23,33 +25,35 @@ getInfoAboutUser();
 
 //-----------------------------------------------------------------------------------------------------//
 
-// Функция для обновления всех текстовых элементов на странице при смене языка
-function updateInterface(languageData, language) {
-  const elementsToUpdate = document.querySelectorAll('[data-language]');
+const select = document.querySelector('.language-selector');
+select.addEventListener('change', changeURLLanguage);
+const allLang = ['ru', 'en'];
 
-  elementsToUpdate.forEach((element) => {
-    const key = element.dataset.language;
-
-    if (languageData[language] && languageData[language][key]) {
-      element.textContent = languageData[language][key];
-    }
-  });
+function changeURLLanguage() {
+  let lang = select.value;
+  location.href = window.location.pathname + '#' + lang;
+  location.reload();
 }
 
-// Обработчик события клика по кнопке смены языка
-document
-  .getElementById('languageSelector')
-  .addEventListener('change', function () {
-    const selectedLanguage = this.value;
-    api
-      .switchLanguage()
-      .then((languageData) => {
-        updateInterface(languageData, selectedLanguage);
-      })
-      .catch((error) => {
-        console.error('Произошла ошибка:', error);
-      });
-  });
+function changeLanguage() {
+  let hash = window.location.hash;
+  hash = hash.substring(1);
+  console.log(hash);
+  if (!allLang.includes(hash)) {
+    location.href = window.location.pathname + '#en';
+    location.reload();
+  }
+  select.value = hash;
+  for (let key in langArr) {
+    let elem = document.querySelector('.lang-' + key);
+    if (elem) {
+      // проверка на существование элемента в целом
+      elem.innerHTML = langArr[key][hash];
+    }
+  }
+}
+
+changeLanguage();
 
 //-------------------------------------------------------------------------------------------------//
 
