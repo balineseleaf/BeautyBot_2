@@ -17,6 +17,7 @@ function getInfoAboutUser() {
   apiProfile
     .getUserInfo()
     .then((clientData) => {
+      const clientId = clientData.clientId;
       userName.textContent = 'Ваше имя:   ' + clientData.clientName;
       userPhone.textContent = 'Ваш телефон:   ' + clientData.clientPhone;
       userEmail.textContent = 'Ваша почта:   ' + clientData.clientEmail;
@@ -24,5 +25,5 @@ function getInfoAboutUser() {
     })
     .catch((error) => console.log(error));
 }
-
+console.log(clientId);
 getInfoAboutUser();

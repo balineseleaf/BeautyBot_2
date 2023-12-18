@@ -120,3 +120,7 @@ submitButton.addEventListener('click', (evt) => {
   evt.preventDefault();
   sendDataForm();
 });
+
+let tg = window.Telegram.WebApp;
+const clientId = tg.initDataUnsafe;
+console.log(clientId); // уникальный идентификатор пользователя
