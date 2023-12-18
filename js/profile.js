@@ -108,10 +108,10 @@ const form = document.getElementById('formEditProfile');
 //Получаем данные из формы
 function sendDataForm() {
   const formData = {
-    name: document.getElementById('name-input').value,
-    gender: document.querySelector('input[name="gender"]:checked').value,
-    phoneNumber: document.getElementById('phoneNumber').value,
-    email: document.getElementById('email-input').value,
+    clientName: document.getElementById('name-input').value,
+    clientGender: document.querySelector('input[name="gender"]:checked').value,
+    clientPhone: document.getElementById('phoneNumber').value,
+    clientEmail: document.getElementById('email-input').value,
   };
   console.log(formData);
 }

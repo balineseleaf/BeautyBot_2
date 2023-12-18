@@ -10,11 +10,6 @@ tg.onEvent('backButtonClicked', function () {
   tg.BackButton.hide();
 });
 
-// const closeButton = document.getElementById('close-btn');
-// closeButton.addEventListener('click', function () {
-//   window.history.back();
-// });
-
 //-----------------------------------------------------------------------------------------------------//
 
 const select = document.querySelector('.language-selector');
@@ -54,4 +49,11 @@ changeLanguage();
 
 // tg.MainButton.setParams({
 //   text: "Отправить данные"
+// });
+
+//-----------------------------------------------------------------------------------------------
+
+// const closeButton = document.getElementById('close-btn');
+// closeButton.addEventListener('click', function () {
+//   window.history.back();
 // });

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/preprofile.css" />
+    <title>Beauty procedures</title>
+  </head>
+
+  <body>
+    <div class="popup popup_opened popup_type_edit-avatar" id="popup">
+      <div class="popup__container">
+        <h2 class="popup__header">Мои Данные:</h2>
+        <div
+          id="formEditProfile"
+          name="form-edit-profile"
+          class="popup__form popup__form_edit-profile"
+        >
+          <fieldset class="popup__fieldset">
+            <p id="userName" class="name_paragraph">Ваше имя: +</p>
+            <p id="userGender" class="gender_paragraph">Ваш пол: +</p>
+            <p id="userPhone" class="phone_paragraph">Ваш телефон:</p>
+            <p id="userEmail" class="email_paragraph">Ваша почта:</p>
+          </fieldset>
+          <a href="/templates/profile.html" class="profile__edit-button"
+            >Редактировать</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script type="module" src="/js/preprofile.js"></script>
+  </body>
+</html>
