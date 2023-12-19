@@ -3,23 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/profile.css" />
+    <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/errors.css" />
     <title>Beauty procedures</title>
   </head>
 
   <body>
     <div class="popup popup_opened popup_type_edit-avatar" id="popup">
-      <div class="popup__container">
-        <h2 class="popup__header">Мои Данные:</h2>
+      <div class="profile__container">
+        <h2 class="profile__header">Мои Данные:</h2>
         <form
           id="formEditProfile"
           name="form-edit-profile"
-          class="popup__form popup__form_edit-profile"
+          class="profile__form popup__form_edit-profile"
           novalidate
         >
-          <fieldset class="popup__fieldset">
+          <fieldset class="profile__fieldset">
+            <p id="userID" class="profile__id">Ваш ID:</p>
             <p class="name_paragraph">Введите ваше имя:</p>
             <input
               id="name-input"
@@ -106,17 +107,18 @@
               type="submit"
               id="submitButton"
               disabled
-              class="popup__submit popup__submitAddCard"
+              class="profile__submit popup__submitAddCard"
             >
               Сохранить
             </button>
           </fieldset>
         </form>
-        <button type="button" class="popup__close" id="close-btn"></button>
+        <!-- <button type="button" class="profile__close" id="close-btn"></button> -->
       </div>
     </div>
 
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script type="module" src="/js/profile.js"></script>
+    <!-- <script type="module" src="/js/preprofile.js"></script> -->
   </body>
 </html>

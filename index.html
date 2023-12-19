@@ -9,14 +9,16 @@
 
   <body>
     <div class="container">
-      <h1 class="header lang-welcome-message"></h1>
+      <h1 data-lang="welcome-message" class="header"></h1>
       <!-- <div class="usercard" id="usercard"></div> -->
       <!-- Выпадающий список для выбора языка -->
       <div class="langbox">
-        <select class="language-selector" id="languageSelector">
+        <!-- <select class="language-selector" id="languageSelector">
+          <option value="ru" selected>Русский</option>
           <option value="en">English</option>
-          <option value="ru">Русский</option>
-        </select>
+        </select> -->
+        <button data-btn="ru" class="switch-language-btn">RU</button>
+        <button data-btn="en" class="switch-language-btn">EN</button>
 
         <!-- Кнопка для смены языка -->
         <!-- <button id="changeLanguageButton">Change Language</button> -->
@@ -29,6 +31,7 @@
       <div class="btns">
         <div class="inner-long">
           <a
+            data-lang="button-signup-for-service"
             href="/templates/services.html"
             class="btn-link lang-button-signup-for-service"
             id="btn1"
@@ -39,6 +42,7 @@
           <div class="inner-inside">
             <div class="item">
               <a
+                data-lang="button-my-notes"
                 href="/templates/mynotes.html"
                 class="btn-link lang-button-my-notes"
                 id="btn2"
@@ -46,8 +50,9 @@
             </div>
             <div class="item">
               <a
+                data-lang="button-my-data"
                 href="/templates/preprofile.html"
-                class="btn-link lang-button-my-data"
+                class="btn-link"
                 id="btn3"
               ></a>
             </div>
@@ -55,6 +60,7 @@
           <div class="inner-inside">
             <div class="item">
               <a
+                data-lang="button-salons"
                 href="/templates/salons.html"
                 class="btn-link lang-button-salons"
                 id="btn4"
@@ -62,6 +68,7 @@
             </div>
             <div class="item">
               <a
+                data-lang="button-about-us"
                 href="/templates/about.html"
                 class="btn-link lang-button-about-us"
                 id="btn5"

@@ -1,3 +1,23 @@
+import Api from '../utils/Api.js';
+
+const apiProfile = new Api({
+  url: 'http://localhost:5000',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+});
+//получение id пользователя
+const userId = document.getElementById('userID');
+function getId() {
+  apiProfile
+    .getUserInfo()
+    .then((clientData) => {
+      userId.textContent = 'Ваш ID:  ' + clientData.clientId;
+    })
+    .catch((error) => console.log(error));
+}
+getId();
+
 // Получаем ссылки на поля и кнопку сабмита
 const nameInput = document.getElementById('name-input');
 const numberInput = document.getElementById('phoneNumber');
@@ -102,25 +122,40 @@ genderInput1.addEventListener('change', checkForm);
 genderInput2.addEventListener('change', checkForm);
 numberInput.addEventListener('input', checkForm);
 
-// сбор данных с формы
-const form = document.getElementById('formEditProfile');
+function updateUser(formData) {
+  console.log(formData);
+  apiProfile
+    .editProfile(formData)
+    .then((newuser) => {
+      console.log(newuser);
+    })
+    .catch((error) => console.log(error));
+}
 
 //Получаем данные из формы
 function sendDataForm() {
+  const clientId = Number(
+    document.getElementById('userID').innerHTML.substring(9)
+  );
   const formData = {
     clientName: document.getElementById('name-input').value,
     clientGender: document.querySelector('input[name="gender"]:checked').value,
     clientPhone: document.getElementById('phoneNumber').value,
     clientEmail: document.getElementById('email-input').value,
   };
-  console.log(formData);
+  formData.clientId = clientId;
+  updateUser(formData);
 }
 
 submitButton.addEventListener('click', (evt) => {
   evt.preventDefault();
   sendDataForm();
+  window.location.href = '/templates/preprofile.html';
 });
 
-let tg = window.Telegram.WebApp;
-const clientId = tg.initDataUnsafe;
-console.log(clientId); // уникальный идентификатор пользователя
+let tg = window.Telegram.WebApp; // создаем объект телеграмма
+tg.BackButton.show();
+tg.onEvent('backButtonClicked', function () {
+  window.location.href = '/templates/preprofile.html';
+  tg.BackButton.hide();
+});

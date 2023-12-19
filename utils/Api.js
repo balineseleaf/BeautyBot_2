@@ -12,18 +12,22 @@ export default class Api {
     }).then(this._handleResponse);
   }
 
-  // // Функция для получения данных с сервера о текстах на разных языках
-  // switchLanguage() {
-  //   const selectedLanguage = document.getElementById('languageSelector').value;
-  //   const data = {
-  //     language: selectedLanguage,
-  //   };
-  //   return fetch(`${this._url}/language/${selectedLanguage}`, {
-  //     method: 'POST',
-  //     headers: this._headers,
-  //     body: JSON.stringify(data),
-  //   }).then(this._handleResponse);
-  // }
+  editProfile(data) {
+    console.log(data);
+    return fetch(`${this._url}/clientData/`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        clientId: data.clientId,
+        clientName: data.clientName,
+        clientGender: data.clientGender,
+        clientPhone: data.clientPhone,
+        clientEmail: data.clientEmail,
+      }),
+    }).then(this._handleResponse);
+  }
 
   _handleResponse(res) {
     if (res.ok) {
